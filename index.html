@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
+        <h2 class="navbar-brand"> Weather Dashboard</h2>
+    </nav>
+    <!-- Body -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Search Container -->
+            <div class="col-12" id="search-wrapper">
+                <div>
+                    <!-- Search Label -->
+                    <h3>Search for a City</h3>
+
+                    <!-- Search Input Group -->
+                    <form class="input-group" id="search-form">
+
+                        <!-- Search Input Field -->
+                        <input type="text" id="search-input">
+
+                        <!-- Search Button -->
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-outline-info">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Search City Collapse Button -->
+                    <button class="btn btn-outline-info" type="button" id="search-collapse-btn" data-toggle="collapse" data-target="#search-list">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrows-expand" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8zm6-1.5a.5.5 0 0 0 .5-.5V1.5a.5.5 0 0 0-1 0V6a.5.5 0 0 0 .5.5z"/>
+                            <path fill-rule="evenodd" d="M10.354 3.854a.5.5 0 0 0 0-.708l-2-2a.5.5 0 0 0-.708 0l-2 2a.5.5 0 1 0 .708.708L8 2.207l1.646 1.647a.5.5 0 0 0 .708 0zM8 9.5a.5.5 0 0 1 .5.5v4.5a.5.5 0 0 1-1 0V10a.5.5 0 0 1 .5-.5z"/>
+                            <path fill-rule="evenodd" d="M10.354 12.146a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L8 13.793l1.646-1.647a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                    </button>
+
+                    <!-- Search City List -->
+                    <ul class="collapse show" id="search-list">
+                        <li class="search-list-item"><button class="btn btn-outline-info search-list-btn">Atlanta</button></li>
+                        <li class="search-list-item"><button class="btn btn-outline-info search-list-btn">Boston</button></li>
+                        <li class="search-list-item"><button class="btn btn-outline-info search-list-btn">Chicago</button></li>
+                        <li class="search-list-item"><button class="btn btn-outline-info search-list-btn">Detroit</button></li>
+                        <li class="search-list-item"><button class="btn btn-outline-info search-list-btn">Houston</button></li>
+                        <li class="search-list-item"><button class="btn btn-outline-info search-list-btn">Los Angeles</button></li>
+                        <li class="search-list-item"><button class="btn btn-outline-info search-list-btn">New York</button></li>
+                        <li class="search-list-item"><button class="btn btn-outline-info search-list-btn">Sacremento</button></li>
+                        <li class="search-list-item"><button class="btn btn-outline-info search-list-btn">San Fransisco</button></li>
+                        <li class="search-list-item"><button class="btn btn-outline-info search-list-btn">St. Louis</button></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Data Container -->
+            <div class="col-12">
+
+                <!-- City Data -->
+                <div class="row">
+                    <div class="col-12" id="city-data-div">
+                        
+                        <!-- City Title -->
+                        <h1 id="city-title"><strong>Ann Arbor</strong></h1>
+
+                        <!-- City Info -->
+                        <div class="city-info"><strong>Temperature: </strong><span id="city-temp"></span></div>
+                        <div class="city-info"><strong>Humidity: </strong><span id="city-humidity"></span></div>
+                        <div class="city-info"><strong>Wind Speed: </strong><span id="city-wind"></span></div>
+                        <div class="city-info"><strong>UV Index: </strong><span id="city-uv"></span></div>
+
+                    </div>
+                </div>
+
+                <!-- 5 Day Forecast -->
+                <div class="row">
+                    <div class="col-12" id="forecast-div">
+
+                        <!-- Day 1 -->
+                        <div class="forecast-day" id="forecast-1" data-index="1">
+                            <!-- Conditions -->
+                            <div id="conditions-1"></div>
+                            <!-- Temperature -->
+                            <div id="temp-1"></div>
+                            <!-- Humidity -->
+                            <div id="humidity-1"></div>
+                        </div>
+
+                        <!-- Day 2 -->
+                        <div class="forecast-day" id="forecast-2" data-index="2">
+                            <!-- Conditions -->
+                            <div id="conditions-2"></div>
+                            <!-- Temperature -->
+                            <div id="temp-2"></div>
+                            <!-- Humidity -->
+                            <div id="humidity-2"></div>
+                        </div>
+
+                        <!-- Day 3 -->
+                        <div class="forecast-day" id="forecast-3" data-index="3">
+                            <!-- Conditions -->
+                            <div id="conditions-3"></div>
+                            <!-- Temperature -->
+                            <div id="temp-3"></div>
+                            <!-- Humidity -->
+                            <div id="humidity-3"></div>
+                        </div>
+
+                        <!-- Day 4 -->
+                        <div class="forecast-day" id="forecast-4" data-index="4">
+                            <!-- Conditions -->
+                            <div id="conditions-4"></div>
+                            <!-- Temperature -->
+                            <div id="temp-4"></div>
+                            <!-- Humidity -->
+                            <div id="humidity-4"></div>
+                        </div>
+
+                        <!-- Day 5 -->
+                        <div class="forecast-day" id="forecast-5" data-index="5">
+                            <!-- Conditions -->
+                            <div id="conditions-5"></div>
+                            <!-- Temperature -->
+                            <div id="temp-5"></div>
+                            <!-- Humidity -->
+                            <div id="humidity-5"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Popper -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<!-- Custom JS -->
+<script src="script.js"></script>
+
+</html>

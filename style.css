@@ -1,0 +1,77 @@
+/* NAVBAR STYLING */
+.navbar-brand{
+    text-align: center;
+}
+
+/* SEARCH STYLING */
+#search-wrapper{
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: rgb(49, 49, 49);
+    color: rgb(173, 173, 173);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#search-list{
+    list-style: none;
+    margin: auto;
+    padding: 0 0 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-collapse: collapse;
+}
+
+#search-collapse-btn{
+    width:100%;
+    border-radius: 0px;
+}
+
+.search-list-item{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 0px;
+}
+
+.search-list-btn{
+    width: 100%;
+    border-radius: 0px;
+    margin-top: -0.66666666666666666666666;
+}
+
+
+/* CITY DATA STYLING */
+#city-title{
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+#city-data-div{
+    background-color: rgb(49, 49, 49);
+    color: #17a2b8;
+    padding: 2rem;
+}
+
+.city-info{
+    width: 100%;
+    border-width: 0.1rem;
+    border-style: solid;
+    border-color: #17a2b8;
+    margin-top: -0.1rem;
+    padding: 1rem;
+}
+
+.city-info:hover{
+    background-color: #17a2b8;
+    color: #FFF;
+}
+
+/* FORECAST STYLING */
+.forecast-div{
+    background-color: rgb(49, 49, 49);
+    color: #17a2b8;
+    padding: 2rem;
+}
