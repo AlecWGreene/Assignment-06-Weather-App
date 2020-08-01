@@ -24,11 +24,11 @@ var searchHistory = [];
 /** openWeather API link */
 var weather_URL = `https://api.openweathermap.org/data/2.5/weather?q=${query.name}&appid=` + apiKey;
 /** openWeather UV API link */
-var weatherUV_URL = `http://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${query.lat}&lon=${query.lon}`
+var weatherUV_URL = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${query.lat}&lon=${query.lon}`
 /** openWeather Forecast API link */
-var forecast_URL = `http://api.openweathermap.org/data/2.5/forecast?q=${query.name}&appid=${apiKey}`;
+var forecast_URL = `https://api.openweathermap.org/data/2.5/forecast?q=${query.name}&appid=${apiKey}`;
 /** The url for a weather icon */
-var icon_URL = "http://openweathermap.org/img/w/";
+var icon_URL = "https://openweathermap.org/img/w/";
 /** openWeather param to return units in Imperial */
 var imperial_suffix = "&units=imperial";
 /** .png */
