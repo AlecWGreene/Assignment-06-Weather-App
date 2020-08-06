@@ -228,7 +228,7 @@ function GetCityWeather(a_city){
  */
 function GetCityUV(){
     // Update weather UV url
-    weatherUV_URL = `http://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${query.lat}&lon=${query.lon}`;
+    weatherUV_URL = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${query.lat}&lon=${query.lon}`;
 
     // Ajax UV call
     $.ajax({
@@ -246,7 +246,7 @@ function GetCityUV(){
 function GetForecast(){
 
     // Update the forecast url
-    forecast_URL = `http://api.openweathermap.org/data/2.5/forecast?q=${query.name}&appid=${apiKey}`;
+    forecast_URL = `https://api.openweathermap.org/data/2.5/forecast?q=${query.name}&appid=${apiKey}`;
 
     // Ajax call
     $.ajax({
